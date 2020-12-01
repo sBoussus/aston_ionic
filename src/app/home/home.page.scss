@@ -8,20 +8,20 @@
   transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ul {
+  list-style: none;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+li {
+  font-size: 14pt;
+  padding: 4px;
 }
 
-#container a {
-  text-decoration: none;
+#message {
+  font-size: 20pt;
+  margin-bottom: 40px;
+}
+
+ion-icon {
+  color: #FFAAEE;
 }

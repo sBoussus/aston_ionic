@@ -1,20 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Demo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- HTML standard -->
+  <!-- <div id="container">
+    <ul>
+      <li *ngFor="let student of students">{{ student }}</li>
+    </ul>
+  </div> -->
+
+  <div id="message">{{ message }}</div>
+  <ion-chip (click)="pop()" color="secondary">
+    <ion-label>Test popover</ion-label>
+  </ion-chip>
+
+  <!-- composant ion-list -->
+  <ion-list>
+    <ion-item *ngFor="let student of students; let i=index" routerLink="/student/{{i}}">
+      <ion-label>{{ student.name }}</ion-label>
+      <ion-badge [color]="student.grade < 10 ? 'danger' : 'secondary'">{{ student.grade }}</ion-badge>
+      <ion-button (click)="onClick(i)">Infos</ion-button>
+      <ion-avatar slot="start">
+        <img src="assets/images/{{i}}.jpg" alt="">
+      </ion-avatar>
+      <ion-icon name="mail-outline"></ion-icon>
+      <ion-checkbox (ionChange)="onChange($event, i)" [checked]="student.isProjectDone"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

@@ -1,0 +1,13 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ student.name }}</ion-card-title>
+    <ion-thumbnail>
+      <img src="assets/images/{{studentId}}.jpg" alt="picture of a student">
+    </ion-thumbnail>
+  </ion-card-header>
+  <ion-card-content>
+    <p>Note: {{ student.grade }}</p>
+    <p>{{ student.comment }}</p>
+  </ion-card-content>
+  <ion-button color="primary" routerLink="/home" size="small">Retour</ion-button>
+</ion-card>
